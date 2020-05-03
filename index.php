@@ -1,6 +1,8 @@
 <?php
-  include 'include/config.php';
-  include 'include/util.php';
+  require_once 'include/config.php';
+  require_once 'include/util.php';
+  require_once 'tests/tests.php';
+
   include 'include/header.html';
 ?>
 
@@ -53,7 +55,7 @@
         }
         echo "</ul>";
       ?>
-
+    <?php echo(runAllTests()); ?>
   </div>
 </div>
     
