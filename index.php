@@ -25,12 +25,12 @@
     $links = array_values($arr);
   }
 
-  $result = my_curl_query("https://www.franklin.edu/");
+  $fpp = my_curl_query("https://www.google.com/search?q=php+curl+example");
 ?>
 
 <div class="row">
   <div class="col-lg-12">
-    <?php echo $result; ?>
+<?php echo ($fpp); ?>
   </div>
 </div>
 
