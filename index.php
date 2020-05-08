@@ -7,5 +7,7 @@ function my_curl_query($url) {
   curl_close($ch);
   return $data;
 }
-echo (my_curl_query("https://www.google.com/search?q=php+curl+example"));
+$result = my_curl_query("https://www.google.com/search?q=php+curl+example");
+preg_match_all("/url\?q=(.*?)&amp;/", $result, $arr);
+print_r($arr);
 ?>
