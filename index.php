@@ -8,6 +8,6 @@ function my_curl_query($url) {
   return $data;
 }
 $result = my_curl_query("https://www.google.com/search?q=php+curl+example");
-preg_match_all("/url\?q=(.*?)&amp;/", $result, $arr);
+preg_match_all("/(?<=url\?q=).*?(?=&amp;)/", $result, $arr);
 print_r($arr);
 ?>
