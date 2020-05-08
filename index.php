@@ -24,16 +24,10 @@
     unset($arr[count($arr)-1]);
     $links = array_values($arr);
   }
-
-  $fpp = my_curl_query("https://www.google.com/search?q=php+curl+example");
 ?>
 
 <div class="row">
   <div class="col-lg-12">
-<?php echo ($fpp); ?>
-  </div>
-</div>
-
     <p>
       This will show the links only from the first page of Google for the given terms.
     </p>
