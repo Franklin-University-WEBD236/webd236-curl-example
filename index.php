@@ -13,6 +13,7 @@
     curl_close($ch);
     return $data;
   }
+
   $query = safeParam($_REQUEST, 'query', "");
   $links = [];
   if ($query) {
@@ -23,10 +24,16 @@
     unset($arr[count($arr)-1]);
     $links = array_values($arr);
   }
+
+  $result = my_curl_query("https://www.franklin.edu/");
 ?>
 
 <div class="row">
   <div class="col-lg-12">
+    <?php echo $result; ?>
+  </div>
+</div>
+
     <p>
       This will show the links only from the first page of Google for the given terms.
     </p>
