@@ -27,7 +27,9 @@
 
 <div class="row">
   <div class="col-lg-12">
-    <h1>Google Scraper</h1>
+    <p>
+      This will show the links only from the first page of Google for the given terms.
+    </p>
   </div>
 </div>
 
@@ -39,7 +41,7 @@
           <div class="form-group">
             <div class="form-row">
               <div class="col">
-                <label for="query">Enter a google search</label>
+                <label for="query">Enter a Google search</label>
                 <input type="text" class="form-control" id="query" name="query" placeholder="Search terms" required value="<?php echo(safeParam($_REQUEST, 'query', '')); ?>">
               </div>
             </div>
@@ -60,12 +62,14 @@
 
 <div class="row mt-4">
   <div class="col-lg-12">
-    <h3>Top links from Google</h3>
-    <ul>
-      <?php foreach ($links as $link): ?>
-      <li><a href="<?php echo(urldecode($link));?>"><?php echo(urldecode($link));?></a></li>
-      <?php endforeach; ?>
-    </ul>
+    <?php if ($links): ?>
+      <h3>Top links from Google</h3>
+      <ul>
+        <?php foreach ($links as $link): ?>
+        <li><a href="<?php echo(urldecode($link));?>" target="_blank"><?php echo(urldecode($link));?></a></li>
+        <?php endforeach; ?>
+      </ul>
+    <?php endif; ?>
   </div>
 </div>
     
